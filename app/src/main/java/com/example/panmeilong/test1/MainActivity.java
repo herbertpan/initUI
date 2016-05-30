@@ -8,15 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
+    //@Bind(R.id.im_othersinfo_avatar) RoundImageView mRoundImageView;
+
+
     private DrawerLayout mDrawerLayout;
     private static final String TAG = "testLONG";
     private LinearLayout rootLayout;
-    @Override protected void onCreate(Bundle savedInstanceState)
-    {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initToolbar();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity
                 mDrawerLayout.setClipToPadding(false);
             }
         }
+
+
     }
 
     private void initToolbar() {
