@@ -127,7 +127,7 @@
 
                                 <com.makeramen.roundedimageview.RoundedImageView
                                     android:id="@+id/im_othersinfo_avatar"
-                                    android:src="@mipmap/test_avatar"
+                                    android:src="@mipmap/avatar2"
                                     app:riv_corner_radius="100dp"
                                     app:riv_border_width="2dp"
                                     app:riv_mutate_background="true"

@@ -9,19 +9,21 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import butterknife.Bind;
 
 public class MainActivity extends AppCompatActivity {
+
     @Bind(R.id.tv_othersinfo_name)                      TextView tv_name;
     @Bind(R.id.im_othersinfo_avatar)                    RoundedImageView im_avatar;
     @Bind(R.id.tv_othersinfo_num_fans)                  TextView tv_num_fans;
     @Bind(R.id.tv_othersinfo_num_follow)                TextView tv_num_follows;
-    @Bind(R.id.btn_othersinfo_status)                   Button btn_status;
-    @Bind(R.id.btn_othersinfo_follow)                   Button btn_follow;
-    @Bind(R.id.btn_othersinfo_add_friend)               Button btn_add_friend;
+    @Bind(R.id.btn_othersinfo_status)                   Button   btn_status;
+    @Bind(R.id.btn_othersinfo_follow)                   Button   btn_follow;
+    @Bind(R.id.btn_othersinfo_add_friend)               Button   btn_add_friend;
     @Bind(R.id.tv_othersinfo_sign2)                     TextView tv_sign2;
     @Bind(R.id.tv_othersinfo_num_created_landmark)      TextView tv_num_created_landmark;
     @Bind(R.id.tv_othersinfo_created_landmark1)         TextView tv_created_landmark1;
@@ -40,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initToolbar();
+        //butterknife应该定义在哪儿？定义在最上面好像没有关联到。
+        RoundedImageView im_avatar = (RoundedImageView) findViewById(R.id.im_othersinfo_avatar);
+        Toast.makeText(MainActivity.this, "" + im_avatar.getCornerRadius(), Toast.LENGTH_LONG).show();
+        String string = "123";
+        Toast.makeText(MainActivity.this, "" + string, Toast.LENGTH_LONG).show();
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
             localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
@@ -51,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 mDrawerLayout.setClipToPadding(false);
             }
         }
-
-
     }
 
     private void initToolbar() {
@@ -61,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
-
     }
 
 }
